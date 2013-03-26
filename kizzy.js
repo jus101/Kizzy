@@ -174,6 +174,14 @@
       checkExpiry(this, k)
       return this._[k] ? this._[k].value : undefined
     },
+    
+    getAll: function() {
+      var ret = {};
+      for (var k in this._) {
+       ret[k] = this.get(k)
+      }
+      return ret;
+    },
 
     remove: function (k) {
       delete this._[k];
